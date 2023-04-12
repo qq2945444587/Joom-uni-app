@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    html,
+    div {
+        padding: 0;
+        margin: 0;
+    }
+
+    body span {
+        color: red;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    body span:nth-child(2n) {
+        color: rgb(41, 41, 41);
+    }
+</style>
+
+<body>
+    <span class="hour"></span>
+    <span class="dw-box">时</span>
+    <span class="minute"></span>
+    <span class="dw-box">分</span>
+    <span class="second"></span>
+    <span class="dw-box">秒</span>
+    <span class="msecond">7</span>
+
+</body>
+
+</html>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    var start = new Date("2021/1/15 17:00")
+    setInterval(() => {
+        var nowTime = new Date()
+        var time = nowTime.getTime()
+        var time2 = start.getTime()
+        var time3 = time2 - time
+        var h = JSON.stringify(Math.floor(time3 / 1000 / 60 / 60 % 24));
+        var m = JSON.stringify(Math.floor(time3 / 1000 / 60 % 60));
+        var s = JSON.stringify(parseInt((time3 / 1000 % 60)))
+        if (h.length == 1) {
+            $(".hour").html("0" + h)
+        } else {
+            $(".hour").html(h)
+        }
+        if (m.length == 1) {
+            $(".minute").html("0" + m)
+        } else {
+
+            $(".minute").html(m)
+        }
+        if (s.length == 1) {
+            $(".second").html("0" + s)
+        } else {
+            $(".second").html(s)
+        }
+
+
+        var msecond = 001
+        setInterval(() => {
+            msecond += 4
+            if (msecond > 999) {
+                msecond = 001
+                $(".msecond").html(msecond)
+            }
+            $(".msecond").html(msecond)
+        }, 1)
+
+    }, 1000)
+
+
+</script>

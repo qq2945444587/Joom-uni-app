@@ -1,0 +1,64 @@
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    color: #333333;
+    text-decoration: none;
+}
+
+i {
+    font-style: normal;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+bottom {
+    outline: none;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-size: 0.14rem;
+    font-family: "microsoft yahei";
+    /* background-color: #f5f5f5; */
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
